@@ -85,7 +85,7 @@ bool ResultCurrency(long input, Currency currency, string code)
 {
     try
     {
-        var result = input / currency.Valute[code.ToUpper()].Value;
+        var result = input / (currency.Valute[code.ToUpper().Trim()].Value / currency.Valute[code.ToUpper()].Nominal);
         Console.WriteLine($"Итог: {result} ({code})");
         return true;
     }
